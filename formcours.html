@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <h1>Реєстрація на онлайн-курс</h1>
+
     <form>
         <label for="username">Iм'я та Прізвище</label> <!--Перевірка імені та прізвища користувача--> 
         <input 
@@ -12,6 +14,7 @@
         id="username" 
         name="username" 
         required placeholder="Іван Іванович">
+        <br>
         
 
         <br>
@@ -23,6 +26,7 @@
         name="email"
         required placeholder="example@gmail.com"
         >
+        <br>
 
          <br>
 
@@ -34,6 +38,7 @@
         required placeholder="+38000000000"
         maxlength="13"
         >
+       <br>
 
        <br>
 
@@ -46,6 +51,7 @@
         max="70"
         required placeholder="20"
         >
+        <br>
 
          <br>
 
@@ -56,7 +62,8 @@
         name="date"
 
         >
-        
+        <br>
+
         <br>
 
         <label for="password">Пароль</label> <!--Перевірка пароля-->
@@ -67,7 +74,7 @@
          required placeholder="********"
         minlength="8"
         >
-
+        <br>
         <br>
 
         <label for="confirm_password">Підтвердження пароля</label> <!--Підтвердження пароля-->
@@ -78,8 +85,8 @@
          required placeholder="Підтвердження пароля"
         minlength="8"
         >
-
-
+        <br>
+        <br>
         <!--Рівень підготовки-->
         <div class="form-group">
             <label>Рівень підготовки </label>
@@ -90,7 +97,9 @@
             </div>
         </div>
 
-        <!-- Теми які цікавлять (Checkbox) -->
+        <br>
+
+        <!-- Теми які цікавлять -->
         <div class="form-group">
             <label>Теми, які вас цікавлять</label>
             <div class="checkbox-group">
@@ -100,6 +109,8 @@
                 <label><input type="checkbox" name="topics[]" value="Angular"> Angular</label>
             </div>
         </div>
+
+        <br>
 
         <div class="form-group">
             <label>Виберіть бажаний формат навчання </label>
@@ -111,17 +122,21 @@
         </div>
 
         <br>
-        <label for="motivation">Чому ви хочете пройти цей курс? (макс. 300 символів)</label>
+
+        <br>
+        <label for="motivation">Чому ви хочете пройти цей курс? (макс. 300 символів)</label><br><br>
         <textarea style="align-items: center;"
         name="message" 
         id="message" 
-        cols="50" 
-        rows="20" 
+        cols="30" 
+        rows="5" 
         required placeholder="Чому ви хочете пройти цей курс?"
         maxlength="300"
         ></textarea> <!--Чому ви хочете пройти цей курс? (макс. 300 символів)-->
 
-        <
+        <br>
+
+        
        
         <br>
         <!--Кнопка відправки форуму-->
