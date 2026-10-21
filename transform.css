@@ -1,0 +1,118 @@
+/* Базові стилі */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*Анімація плавної появи картки знизу при завантаженні сторінки */
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Нескінченна анімація пульсації для позначки «Акція» */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+    50% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(231, 76, 60, 0); }
+}
+
+/* Головний вмісткартки товару */
+.product-card {
+    position: relative;
+    width: 320px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Запуск анімації появи при завантаженні */
+    animation: slideUpFade 0.8s ease-out forwards;
+    /* Плавний перехід для ефекту наведення */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анімація картка піднімається вгору і трохи збільшується */
+.product-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Використання translate та scale */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Позначка «Акція» */
+.badge-promo {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* нескінченна анімації (infinite) */
+    animation: pulse 1.8s infinite ease-in-out;
+}
+
+/* Зображення товару */
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Текст картки */
+.product-info { padding: 20px; }
+
+.product-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #7f8c8d;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Блок ціни та кнопки */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/*  Кнопка «Купити» */
+.btn-buy {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Перехід кольору та трансформації */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Кнопку: зміна кольору, масштабу та обертання */
+.btn-buy:hover {
+    background: #2980b9;
+    transform: scale(1.1) rotate(-2deg); /* Використання scale та rotate */
+}
