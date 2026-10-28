@@ -1,0 +1,142 @@
+
+@primary-color: #0f172a;
+@accent-color: #2563eb;
+@accent-hover: #1d4ed8;
+@bg-color: #f8fafc;
+@card-bg: #ffffff;
+@text-main: #1e293b;
+@text-muted: #64748b;
+@border-radius: 12px;
+@spacing: 20px;
+
+// Міксин для кнопок із параметрами
+.button-style(@bg, @hover-bg) {
+    background-color: @bg;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+        background-color: @hover-bg;
+        transform: translateY(-2px);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: @bg-color;
+    color: @text-main;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 @spacing;
+}
+
+.header {
+    background-color: @primary-color;
+    color: #ffffff;
+    padding: 35px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+
+    p {
+        color: #94a3b8;
+    }
+}
+
+// Сітка каталогу та вкладеність селекторів
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: @spacing;
+    padding-bottom: 50px;
+
+    .product-card {
+        background-color: @card-bg;
+        border-radius: @border-radius;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+
+        // Ефект hover картки
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 190px;
+            width: 100%;
+            background-color: #e2e8f0;
+        }
+
+        .tech-phone { background-color: #cbd5e1; }
+        .tech-watch { background-color: #94a3b8; }
+        .tech-buds  { background-color: #64748b; }
+
+        .product-content {
+            padding: @spacing;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .product-title {
+                font-size: 1.25rem;
+                margin-bottom: 10px;
+                color: @primary-color;
+            }
+
+            .product-description {
+                font-size: 0.95rem;
+                color: @text-muted;
+                margin-bottom: 20px;
+                flex-grow: 1;
+            }
+
+            .product-footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: auto;
+
+                .product-price {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    color: @primary-color;
+                }
+
+                .btn {
+                    .button-style(@accent-color, @accent-hover);
+                }
+            }
+        }
+    }
+}
+
+// Медіа-запити 
+@media (max-width: 600px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+}

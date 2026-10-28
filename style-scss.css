@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 35px 0;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+.header p {
+  color: #94a3b8;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 50px;
+}
+.catalog .product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.catalog .product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+}
+.catalog .product-card .product-image {
+  height: 190px;
+  width: 100%;
+  background-color: #e2e8f0;
+}
+.catalog .product-card .tech-phone {
+  background-color: #cbd5e1;
+}
+.catalog .product-card .tech-watch {
+  background-color: #94a3b8;
+}
+.catalog .product-card .tech-buds {
+  background-color: #64748b;
+}
+.catalog .product-card .product-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.catalog .product-card .product-content .product-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+.catalog .product-card .product-content .product-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.catalog .product-card .product-content .product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.catalog .product-card .product-content .product-footer .product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.catalog .product-card .product-content .product-footer .btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.catalog .product-card .product-content .product-footer .btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+}
